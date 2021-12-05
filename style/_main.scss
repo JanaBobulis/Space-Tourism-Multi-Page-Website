@@ -1,0 +1,98 @@
+.page-content {
+    background: url('/starter-code/assets/home/background-home-desktop.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    header {
+        padding: 20px 0;
+        nav {
+            ul {
+                position: relative;
+                list-style-type: none;
+                background: rgba(255, 255, 255, 0.04);
+                backdrop-filter: blur(81.5485px);
+                width: 830px;
+                height: 96px;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 473px;
+                    height: 1px;
+                    top: 50%;
+                    right: 95%;
+                    opacity: 0.25;
+                    background: white;
+                }
+                li {
+                    a {
+                        color: white;
+                        text-decoration: none; 
+                        padding: 15px;
+                        text-transform: uppercase;
+                        span {
+                            font-weight: 700;
+                            padding-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1368px) {
+    header { 
+        nav.navigation {
+            ul {
+                width: 630px;
+
+                &::before {
+                    width: 250px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    header { 
+        nav.navigation {
+            ul {
+                width: 600px;
+
+                &::before {
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 901px) {
+    header { 
+        nav.navigation {
+            ul {
+                width: 450px;
+                padding: 0;
+                &::before {
+                    display: none;
+                }
+                li {
+                    a {
+                        font-size: 14px;
+                        line-height: 17px;
+                        letter-spacing: 2.3625px;
+                        span {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
