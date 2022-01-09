@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400&family=Bellefair&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/dist/style.css">
 
   <title>Space tourism website</title>
@@ -15,11 +15,22 @@
 <body>
   <div class="page-content">
     <header>
-      <nav class="navigation site-bounds flex flex-row flex-jc-sb flex-ai-c">
-        <div class="logo">
-          <img src="starter-code/assets/shared/logo.svg">
+      <nav class="navigation">
+        <div class="top-nav flex flex-row flex-jc-sb flex-ai-c">
+          <div class="logo">
+            <img src="starter-code/assets/shared/logo.svg">
+          </div>
+          <a id="toggle-menu" class="toggle-menu hidden-lg" onclick="closeBtn(); toggleMenu()">
+            <div id="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </a>
         </div>
-        <ul class="flex flex-row flex-jc-c flex-ai-c">
+        
+        <ul class="nav-menu flex flex-column">
           <li>
             <a href="/">
               <span>00</span>Home
@@ -41,15 +52,19 @@
         </ul>
       </nav>
     </header>
-    <section class="main-section flex flex-row site-bounds">
+    <section class="main-section flex flex-column site-bounds">
       <div class="left-main">
-        <h1>So, you want to travel to <span>Space</span></h1>
+        <h1>SO, YOU WANT TO TRAVEL TO<br></h1>
+        <span>SPACE</span>
         <p>Let’s face it; if you want to go to space, you might as well genuinely go to 
           outer space and not hover kind of on the edge of it. Well sit back, and relax 
           because we’ll give you a truly out of this world experience!</p>
       </div>
       <div class="right-main">
-        <p>Explore</p>
+        <div class="container-border flex flex-jc-c flex-ai-c">
+          <p>EXPLORE</p>
+        </div>
+        
       </div>
   </div>
   </section>
