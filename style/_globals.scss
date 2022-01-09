@@ -25,6 +25,8 @@ body {
     padding-right: 13px;
 }
 
+
+
 //flexbox 
 .flex {
     display: flex;
@@ -57,4 +59,13 @@ body {
         align-items: end;
     }
  }
+
+@media screen and (min-width: 769px) {
+    .site-bounds-tablet {
+        max-width: 450px;
+        margin: 0 auto;
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+}
 

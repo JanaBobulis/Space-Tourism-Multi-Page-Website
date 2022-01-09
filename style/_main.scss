@@ -73,13 +73,12 @@
 
             .container-border {
                 border-radius: 50%;
-                width: 274px;
-                height: 274px;
+                width: 150px;
+                height: 150px;
                 background: white;
                 p {
-                    font-size: 32px;
-                    line-height: 36.67px;
-                    letter-spacing: 2px;
+                    font-size: 20px;
+                    letter-spacing: 1.25px;
                     font-family: 'Bellefair', serif;
                 }
             }
@@ -93,10 +92,10 @@
 @media screen and (max-width: 1368px) {
 
     .page-content {
-    background: url('/starter-code/assets/home/background-home-tablet.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    // background: url('/starter-code/assets/home/background-home-tablet.jpg');
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: center;
 
 
     .main-section {
@@ -104,16 +103,6 @@
         text-align: center;
         margin-top: 70px;
         gap: 81px;
-
-        .left-main {
-            h1 {
-                font-size: 20px;
-            }
-            p {
-                font-size: 16px;
-            }
-
-        }
     }
     }
    
@@ -124,6 +113,78 @@
     .main-section {
         flex-direction: column;
     }
+}
+
+@media screen and (min-width: 769px) {
+
+    .page-content {
+        background: url('/starter-code/assets/home/background-home-tablet.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        .main-section {
+
+            .left-main {
+                p {
+                    font-size: 16px;
+                    line-height: 28px;
+                    letter-spacing: 1px;
+                }
+
+                h1 {
+                    font-size: 20px;
+                    letter-spacing: 3.38px;
+                }
+            }
+
+            .right-main {
+
+                .container-border {
+                    width: 242px;
+                    height: 242px;
+
+                    p {
+                        font-size: 32px;
+                        letter-spacing: 2px;
+                    }
+
+                }
+            }
+
+        }
+    }
+    .toggle-menu {
+        display: none;
+    }
+
+    header {
+        nav {
+            display: flex; 
+            justify-content: space-between;
+            .nav-menu {
+                display: flex;
+                height: 96px;
+                padding: 0;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                width: 60%;
+
+                li {
+                    padding-bottom: 0;
+
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+    }
+
+    
 }
 
 
