@@ -12,9 +12,9 @@ function closeBtn() {
   
   function mobileDisplay() {
     var y = document.querySelector(".nav-menu");
-    if (document.documentElement.clientWidth >= 901){
+    if (document.documentElement.clientWidth >= 768){
       y.style.display = "flex";
-    } else if(document.documentElement.clientWidth <= 902) {
+    } else if(document.documentElement.clientWidth <= 769) {
       y.style.display = "none";
     }
   }

@@ -41,6 +41,9 @@
 
     .main-section {
         margin-top: 150px;
+        align-items: center;
+        text-align: center;
+        gap: 81px;
         .left-main {
             // width: 50%;
             p, h1 {
@@ -61,7 +64,7 @@
             }
 
             span {
-                font-size: 150px;
+                font-size: 100px;
                 font-weight: 400;
                 line-height: 171.9px;
                 font-family: 'Bellefair', serif;
@@ -89,24 +92,6 @@
 }
 
 
-@media screen and (max-width: 1368px) {
-
-    .page-content {
-    // background: url('/starter-code/assets/home/background-home-tablet.jpg');
-    // background-size: cover;
-    // background-repeat: no-repeat;
-    // background-position: center;
-
-
-    .main-section {
-        align-items: center;
-        text-align: center;
-        margin-top: 70px;
-        gap: 81px;
-    }
-    }
-   
-}
 
 @media screen and (max-width: 901px) {
 
@@ -124,14 +109,15 @@
         background-position: center;
 
         .main-section {
-
+            align-items:center;
+            gap: 56px;
+            margin-top: 70px;
             .left-main {
                 p {
                     font-size: 16px;
                     line-height: 28px;
                     letter-spacing: 1px;
                 }
-
                 h1 {
                     font-size: 20px;
                     letter-spacing: 3.38px;
@@ -139,19 +125,15 @@
             }
 
             .right-main {
-
                 .container-border {
                     width: 242px;
                     height: 242px;
-
                     p {
                         font-size: 32px;
                         letter-spacing: 2px;
                     }
-
                 }
             }
-
         }
     }
     .toggle-menu {
@@ -181,10 +163,43 @@
                 }
             }
         }
+    }  
+}
 
+@media screen and (min-width: 1024px) {
+    .page-content {
+        background: url('/starter-code/assets/home/background-home-desktop.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        .main-section {
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 200px;
+            gap: 200px;
+            align-items: end;
+        }
     }
+}
 
-    
+@media screen and (min-width: 1224px) {
+    .page-content {
+        .main-section {
+            gap: 386px;
+        }
+    }
+}
+ 
+@media screen and (min-width: 500px) {
+    .page-content {
+        .main-section{ 
+            .left-main {
+                .space {
+                    font-size: 150px;
+                }
+            }
+        }
+    }
 }
 
 
