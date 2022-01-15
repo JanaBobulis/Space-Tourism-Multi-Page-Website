@@ -25,4 +25,53 @@ function closeBtn() {
     let menu = document.getElementById("burger");
     menu.classList.toggle('open');
 }
-console.log('test')
+
+//reausable header element
+class Header extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `
+    <header>
+      <nav class="navigation">
+        <div class="top-nav flex flex-row flex-jc-sb flex-ai-c">
+          <div class="logo">
+            <img src="starter-code/assets/shared/logo.svg">
+          </div>
+          <a id="toggle-menu" class="toggle-menu hidden-lg" onclick="closeBtn(); toggleMenu()">
+            <div id="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </a>
+        </div>
+        
+        <ul class="nav-menu flex flex-column">
+          <li>
+            <a href="/">
+              <span>00</span>Home
+            </a>
+          </li>
+          <li>
+            <a href="./destination.html"> 
+              <span>01</span>Destination
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <span>02</span>Crew
+            </a>
+          </li>
+          <li><a href="/">
+            <span>03</span>Technology
+          </a></li>
+        </ul>
+      </nav>
+    </header>
+    `;
+  }
+}
+
+//assigning header element to <main header> element
+customElements.define('main-header', Header)
+
