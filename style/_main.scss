@@ -12,16 +12,6 @@
                 list-style-type: none;
                 background: rgba(255, 255, 255, 0.04);
                 backdrop-filter: blur(81.5485px);
-                // &:before {
-                //     content: "";
-                //     position: absolute;
-                //     width: 473px;
-                //     height: 1px;
-                //     top: 50%;
-                //     right: 95%;
-                //     opacity: 0.25;
-                //     background: white;
-                // }
                 li {
                     a {
                         color: white;
@@ -157,13 +147,22 @@
                 li {
                     padding-bottom: 0;
 
-                    span {
-                        display: none;
-                    }
                 }
             }
         }
     }  
+}
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    header {
+        nav {
+            li {
+                span {
+                    display: none;
+                }
+            }
+        }
+     }
 }
 
 @media screen and (min-width: 1024px) {
@@ -172,20 +171,54 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+       
         .main-section {
             flex-direction: row;
             justify-content: space-between;
             margin-top: 200px;
             gap: 200px;
             align-items: end;
+
+            .lef-main {
+                text-align: start;
+            }
         }
     }
+
+    header {
+        nav {
+            ul {
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 350px;
+                    height: 1px;
+                    top: 50%;
+                    right: 91%;
+                    opacity: 0.25;
+                    background: white;
+                }
+            }
+        }
+    }
+
+   
 }
 
 @media screen and (min-width: 1224px) {
     .page-content {
         .main-section {
             gap: 386px;
+        }
+    }
+
+    header {
+        nav {
+            ul {
+                &:before {
+                    width: 450px;
+                }
+            }
         }
     }
 }
