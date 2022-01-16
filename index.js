@@ -1,30 +1,30 @@
 //mobile navigation menu
 function closeBtn() {
-    let screenOverflow = document.querySelector("body");
-    var x = document.querySelector(".nav-menu");
-    if (x.style.display === "flex") {
-      x.style.display = "none";
-      screenOverflow.style.overflow = "visible";
-    } else {
-      x.style.display = "flex";
-      screenOverflow.style.overflow = "hidden";
-    }
-  }  
-  
-  function mobileDisplay() {
-    var y = document.querySelector(".nav-menu");
-    if (document.documentElement.clientWidth >= 768){
-      y.style.display = "flex";
-    } else if(document.documentElement.clientWidth <= 769) {
-      y.style.display = "none";
-    }
+  let screenOverflow = document.querySelector("body");
+  var x = document.querySelector(".nav-menu");
+  if (x.style.display === "flex") {
+    x.style.display = "none";
+    screenOverflow.style.overflow = "visible";
+  } else {
+    x.style.display = "flex";
+    screenOverflow.style.overflow = "hidden";
   }
+}
 
-  window.onresize = mobileDisplay;
+function mobileDisplay() {
+  var y = document.querySelector(".nav-menu");
+  if (document.documentElement.clientWidth >= 768) {
+    y.style.display = "flex";
+  } else if (document.documentElement.clientWidth <= 769) {
+    y.style.display = "none";
+  }
+}
 
-  function toggleMenu() {
-    let menu = document.getElementById("burger");
-    menu.classList.toggle('open');
+window.onresize = mobileDisplay;
+
+function toggleMenu() {
+  let menu = document.getElementById("burger");
+  menu.classList.toggle('open');
 }
 
 //reausable header element
@@ -85,99 +85,76 @@ async function loadData() {
 loadData();
 
 function createDestinationPage(data) {
-  let test = document.getElementById('test');
-  // if (test) {
-  //   test.innerHTML = `<h1>${data.crew[1].name}</h1>`
-  // }
-  console.log(data); 
-  console.log(data.destinations[0].images.png); 
-
   let destinationPage = document.getElementById('destination-content');
 
-  if(destinationPage) {
- 
-  let destinationImg = document.getElementById('destination-img');
-  let destinationLinks = document.getElementById('destinations');
-  let destinationName = document.querySelector('.destination-name')
-  let destinationLinksChildren = document.getElementById('destinations').children;
-  let destinationArray = Array.from(destinationLinksChildren)
-  console.log(destinationLinksChildren)
+  if (destinationPage) {
 
-    destinationImg.innerHTML = `
-    <img src="${data.destinations[0].images.png}">
-    `
-    destinationName.innerHTML = `
-    <h2>${data.destinations[0].name}</h2>
-    `
+    let destinationImg = document.getElementById('destination-img');
+    let destinationName = document.querySelector('.destination-name')
+    let destinationDescription = document.querySelector('.destination-description')
+    let facts = document.querySelector(".facts");
+    let destinationLinksChildren = document.getElementById('destinations').children;
+    let destinationArray = Array.from(destinationLinksChildren)
+    let dataDestinations = data.destinations
 
-    destinationArray.forEach((item) => {
-      console.log(item.dataset.item)
-      item.addEventListener('click', function(e) {
-        console.log(item.dataset.item)
-        // item.classList.add('active')
-        
-        if(item.dataset.item === "moon") {
-          destinationImg.innerHTML = `
-            <img src="${data.destinations[0].images.png}">
+    dataDestinations.forEach(response => {
+
+      destinationImg.innerHTML = `
+      <img src="${data.destinations[0].images.png}">
+      `
+      destinationName.innerHTML = `
+      <h2>${data.destinations[0].name}</h2>
+      `
+
+      destinationDescription.innerHTML = `
+          <p>${data.destinations[0].description}</p>
           `
-          destinationName.innerHTML = `
-          <h2>${data.destinations[0].name}</h2>
+
+          facts.innerHTML = `
+          <div class="distance">
+            <h3>AVG. DISTANCE</h3>
+            <p>${data.destinations[0].distance}</p>
+          </div>
+          <div class"travel-time">
+            <h3>AVG TRAVEL TIME</h3>
+            <p>${data.destinations[0].travel}</p>
+          </div>`
+          
+     
+
+      destinationArray.forEach((item) => {
+        console.log(item)
+        item.addEventListener('click', function (e) {
+
+          if (item.dataset.item === response.name) {
+            destinationImg.innerHTML = `
+          <img src="${response.images.png}">
           `
-  
-        } else if (item.dataset.item === "mars") {
-          destinationImg.innerHTML = `
-            <img src="${data.destinations[1].images.png}">
+            destinationName.innerHTML = `
+          <h2>${response.name}</h2>
           `
-          destinationName.innerHTML = `
-          <h2>${data.destinations[1].name}</h2>
+            destinationDescription.innerHTML = `
+          <p>${response.description}</p>
           `
-        } else if (item.dataset.item === "europa") {
-          destinationImg.innerHTML = `
-            <img src="${data.destinations[2].images.png}">
-          `
-          destinationName.innerHTML = `
-          <h2>${data.destinations[2].name}</h2>
-          `
-        }
-        else if (item.dataset.item === "titan") {
-          destinationImg.innerHTML = `
-            <img src="${data.destinations[3].images.png}">
-          `
-          destinationName.innerHTML = `
-          <h2>${data.destinations[3].name}</h2>
-          `
-        }
+
+          facts.innerHTML = `
+          <div class"distance">
+            <h3>AVG. DISTANCE</h3>
+            <p>${response.distance}</p>
+          </div>
+          <div class="travel-time">
+            <h3>AVG TRAVEL TIME</h3>
+            <p>${response.travel}</p>
+          </div>`
+          }
+
+          //set an active element
+          let activeEl = document.querySelector('.active')
+          activeEl.classList.remove('active');
+          item.className += " active"
+        })
       })
     })
-    
   }
 }
-
-  // destinationLinks.addEventListener('click', destinationClick);
-
-
-  
-  // function destinationClick(e) {
-  //   e.preventDefault();
-  //   console.log(destinationLinks.children[1].dataset.type)
-    // if (destinationLinks.children[0].dataset.type === "moon") {
-    //   console.log('moon')
-    // } else if (destinationLinks.children[1].dataset.type === "mars") {
-    //   console.log('mars')
-    // }
-  // }
-  
-  
-  
-
-  
-
-  
-  // if(destinationPage) {
-  //   moonImg.innerHTML = `
-  //   <img src="${data.destinations[0].images.png}">
-  //   `
-  // }
-  
-
 
