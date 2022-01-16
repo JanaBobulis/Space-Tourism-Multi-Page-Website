@@ -338,3 +338,77 @@
   .top-nav {
       padding: 24px 24px 0 24px;
   }
+
+
+//destination
+
+#destination-content {
+    background: url('/starter-code/assets/destination/background-destination-mobile.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .main-body {
+        margin-top: 24px;
+        span {
+            font-size: 16;
+            letter-spacing: 2.7;
+            color: white;
+            span {
+                opacity: 0.3;
+                padding-right: 18px;
+            }
+        }
+
+        #moon-img {
+            width: 170px;
+            margin-top: 32px;
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    #destination-content  {
+        background: url('/starter-code/assets/destination/background-destination-tablet.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        .main-body {
+            margin-top: 40px;
+            span {
+                align-self: start;
+                font-size: 20px;
+                letter-spacing: 3.38px;
+
+            }
+            #moon-img {
+                width: 300px;
+                margin-top: 60px;
+            }
+        }
+
+    }
+
+    
+}
+
+@media screen and (min-width: 1024px) {
+    #destination-content  {
+        background: url('/starter-code/assets/destination/background-destination-desktop.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        .main-body {
+            margin-top:76px;
+            span {
+                font-size: 28px;
+                letter-spacing: 4.72px;
+            }
+            #moon-img {
+                width: 445px;
+                margin-top: 97px;
+            }
+        }
+    }
+}
+

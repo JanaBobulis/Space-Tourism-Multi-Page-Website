@@ -21,10 +21,14 @@ body {
 .site-bounds {
     max-width: 1100px;
     margin: 0 auto;
-    padding-left: 13px;
-    padding-right: 13px;
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
+img {
+    width: 100%;
+    height: auto;
+}
 
 
 //flexbox 

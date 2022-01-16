@@ -1,3 +1,4 @@
+//mobile navigation menu
 function closeBtn() {
     let screenOverflow = document.querySelector("body");
     var x = document.querySelector(".nav-menu");
@@ -74,4 +75,30 @@ class Header extends HTMLElement {
 
 //assigning header element to <main header> element
 customElements.define('main-header', Header)
+
+//fetching data.json file
+async function loadData() {
+  const response = await fetch('/starter-code/data.json');
+  const data = await response.json();
+  createDestinationPage(data);
+}
+loadData();
+
+function createDestinationPage(data) {
+  let test = document.getElementById('test');
+  if (test) {
+    test.innerHTML = `<h1>${data.crew[1].name}</h1>`
+  }
+  console.log(data); 
+  console.log(data.destinations[0].images.png); 
+
+  let destinationPage = document.getElementById('destination-content');
+  let moonImg = document.getElementById('moon-img')
+  if(destinationPage) {
+    moonImg.innerHTML = `
+    <img src="${data.destinations[0].images.png}">
+    `
+  }
+  
+}
 
