@@ -19,9 +19,12 @@
                         padding: 15px;
                         text-transform: uppercase;
                         font-size: 16px;
+                        font-family: 'Barlow Condensed', sans-serif;
+                        letter-spacing: 2.7px;
                         span {
                             font-weight: 700;
                             padding-right: 10px;
+                            font-family: 'Barlow Condensed', sans-serif;
                         }
                     }
                 }
@@ -339,15 +342,19 @@
 
     .main-body {
         margin-top: 24px;
-        span {
-            font-size: 16;
-            letter-spacing: 2.7;
-            color: white;
+        .left-desktop {
             span {
-                opacity: 0.3;
-                padding-right: 18px;
+                font-size: 16px;
+                letter-spacing: 2.7px;
+                color: white;
+                font-family: 'Barlow Condensed', sans-serif;
+                span {
+                    opacity: 0.3;
+                    padding-right: 18px;
+                }
             }
         }
+        
 
         #destination-img {
             width: 170px;
@@ -356,9 +363,12 @@
 
         #destinations {
             margin-top: 26px;
+            margin-bottom: 8px;
             a {
                 color: white;
                 text-decoration: none;
+                font-size: 14px;
+                letter-spacing: 2.36px;
 
                 &:not(:last-child) {
                     margin-right: 20px;
@@ -366,7 +376,7 @@
 
                 &.active {
                     border-bottom: 2px solid white;
-                    padding-bottom: 2px;
+                    padding-bottom: 8px;
                 }
             }
         }
@@ -378,22 +388,38 @@
                 text-transform: uppercase;
                 font-family: "Bellefair", serif;
                 font-weight: 300;
+                margin-top: 20px;
+
+
             }
         }
 
         .destination-description {
+            position: relative;
             p {
                 font-size: 15px;
+                font-family: "Barlow", sans-serif;
                 color: white;
                 text-align: center;
                 line-height: 25px;
                 margin: 0;
+            }
+
+            &::after {
+                content: "";
+                bottom: -28px;
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background: white;
+                opacity: 0.3;
             }
         }
 
         .facts {
             text-align: center;
             margin-top: 65px;
+            position: relative;
             .travel-time {
                 margin-top: 32px;
             }
@@ -401,8 +427,9 @@
                 font-size: 14px;
                 letter-spacing: 2.36px;
                 color: white;
-                font-family: "Bellefair", serif;
+                font-family: 'Barlow Condensed', sans-serif;
                 font-weight: 100;
+                margin: 0;
             }
 
             p {
@@ -410,6 +437,8 @@
                 color: white;
                 font-family: "Bellefair", serif;
                 font-weight:100;
+                margin-top: 12px;
+
             }
         }
     }
@@ -421,12 +450,20 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+        height: auto;
+
         .main-body {
             margin-top: 40px;
-            span {
-                align-self: start;
-                font-size: 20px;
-                letter-spacing: 3.38px;
+
+
+            .left-desktop {
+                width: 100%;
+                span {
+                    text-align: left;
+                    font-size: 20px;
+                    letter-spacing: 3.38px;
+                    
+                }
             }
             #destination-img {
                 width: 300px;
@@ -439,21 +476,35 @@
                     color: white;
                     font-size: 16px;
                     text-decoration: none;
+                    letter-spacing: 2.7px;
                 }
             }
 
             .destination-name {
                 h2 {
                     font-size: 80px;
+                    margin-top: 32px;
                 }
             }
 
             .destination-description {
-                padding-left: 50px;
-                padding-right: 50px;
+                // padding-left: 50px;
+                // padding-right: 50px;
                 p {
                     font-size: 16px;
                     line-height: 28px;
+                    margin-top: 8px;
+                }
+            }
+
+            .facts {
+                gap: 79px;
+                margin-top: 49px;
+                flex-direction: row;
+
+                .travel-time {
+                    // text-align: left;
+                    margin-top: 0;
                 }
             }
         }
@@ -466,27 +517,61 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+        height: 100%;
         .main-body {
             margin-top: 76px;
-            span {
-                font-size: 28px;
-                letter-spacing: 4.72px;
+            flex-direction: row;
+            gap: 157px;
+            align-items: flex-end;
+
+            .right-desktop {
+                align-items: flex-start;
             }
+
+            .left-desktop {
+                span {
+                    font-size: 28px;
+                    letter-spacing: 4.72px;
+                }
+            }
+
             #destination-img {
                 width: 445px;
                 margin-top: 97px;
             }
 
+            #destinations {
+                margin-top: 0;
+            }
+
             .destination-name {
+                margin-top: 37px;
                 h2 {
                     font-size: 100px;
                 }
             }
 
             .destination-description {
+                padding: 0;
+                margin-top: 14px;
                 p {
                     font-size: 18px;
                     line-height: 32px;
+                    text-align: left;
+
+                }
+            }
+
+            .facts {
+                gap: 79px;
+                margin-top: 83px;
+                .distance {
+                    text-align: left;
+                }
+
+                .travel-time {
+                    text-align: left;
+                    margin-top: 0;
                 }
             }
         }

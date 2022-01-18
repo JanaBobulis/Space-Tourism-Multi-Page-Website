@@ -115,8 +115,8 @@ function createDestinationPage(data) {
             <h3>AVG. DISTANCE</h3>
             <p>${data.destinations[0].distance}</p>
           </div>
-          <div class"travel-time">
-            <h3>AVG TRAVEL TIME</h3>
+          <div class="travel-time">
+            <h3>EST. TRAVEL TIME</h3>
             <p>${data.destinations[0].travel}</p>
           </div>`
           
@@ -124,8 +124,9 @@ function createDestinationPage(data) {
 
       destinationArray.forEach((item) => {
         console.log(item)
-        item.addEventListener('click', function (e) {
-
+        item.addEventListener('click', function (event) {
+          event.preventDefault();
+          
           if (item.dataset.item === response.name) {
             destinationImg.innerHTML = `
           <img src="${response.images.png}">
@@ -138,12 +139,12 @@ function createDestinationPage(data) {
           `
 
           facts.innerHTML = `
-          <div class"distance">
+          <div class="distance">
             <h3>AVG. DISTANCE</h3>
             <p>${response.distance}</p>
           </div>
           <div class="travel-time">
-            <h3>AVG TRAVEL TIME</h3>
+            <h3>EST. TRAVEL TIME</h3>
             <p>${response.travel}</p>
           </div>`
           }
@@ -152,6 +153,7 @@ function createDestinationPage(data) {
           let activeEl = document.querySelector('.active')
           activeEl.classList.remove('active');
           item.className += " active"
+
         })
       })
     })

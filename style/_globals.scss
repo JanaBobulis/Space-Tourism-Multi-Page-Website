@@ -14,8 +14,8 @@ body {
     font-family: 'Barlow Condensed', sans-serif;
     height: 100vh;
     font-size: 16px;
-    line-height: 19.2px;
-    letter-spacing: 2.7px;
+    // line-height: 19.2px;
+    // letter-spacing: 2.7px;
 }
 
 .site-bounds {
@@ -25,9 +25,14 @@ body {
     padding-right: 24px;
 }
 
+
 img {
     width: 100%;
     height: auto;
+}
+
+h2 {
+    margin: 0;
 }
 
 
@@ -59,23 +64,19 @@ img {
         align-items: center;
     }
 
+    &-ai-fs {
+        align-items: flex-start;
+    }
+
     &-ai-e {
         align-items: end;
     }
  }
 
-@media screen and (min-width: 769px) {
-    .site-bounds-tablet {
-        max-width: 450px;
-        margin: 0 auto;
-        padding-left: 13px;
-        padding-right: 13px;
-    }
-}
 
-@media screen and (min-width: 1024px) {
-    .site-bounds-tablet {
-        max-width: 1100px;
+@media screen and (max-width: 1024px) {
+    .site-bounds-mobile {
+        max-width: 800px;
         margin: 0 auto;
         padding-left: 13px;
         padding-right: 13px;

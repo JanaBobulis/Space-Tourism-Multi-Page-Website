@@ -6,8 +6,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400&family=Bellefair&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Barlow:wght@200;300;400&family=Bellefair&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/dist/style.css">
 
   <title>Space tourism website</title>
@@ -16,18 +15,28 @@
   <div class="page-content" id="destination-content">
       <main-header></main-header>
       <div class="main-body site-bounds flex flex-column flex-jc-c flex-ai-c">
-        <span><span>01</span>PICK YOUR DESTINATION</span>
-        <div id="destination-img">
+        <div class="left-desktop">
+          <div class="flex">
+            <span><span>01</span>PICK YOUR DESTINATION</span>
+          </div>
+          <div class="flex flex-ai-c flex-jc-c">
+            <div id="destination-img"></div>
+          </div>
+          
+          
         </div>
-        <div id="destinations">
-          <a href="#" data-item="Moon" class="dest-link active">MOON</a>
-          <a href="#" data-item="Mars" class="dest-link">MARS</a>
-          <a href="#" data-item="Europa" class="dest-link">EUROPA</a>
-          <a href="#" data-item="Titan" class="dest-link">TITAN</a>
+        <div class="right-desktop flex flex-column flex-ai-c">
+          <div id="destinations">
+            <a href="#" data-item="Moon" class="dest-link active">MOON</a>
+            <a href="#" data-item="Mars" class="dest-link">MARS</a>
+            <a href="#" data-item="Europa" class="dest-link">EUROPA</a>
+            <a href="#" data-item="Titan" class="dest-link">TITAN</a>
+          </div>
+          <div class="destination-name"></div>
+          <div class="destination-description site-bounds-mobile"></div>
+          <div class="facts flex flex-column">
         </div>
-        <div class="destination-name flex flex-jc-c"></div>
-        <div class="destination-description flex flex-jc-c"></div>
-        <div class="facts flex flex-column">
+       
           
         </div>
       </div>
