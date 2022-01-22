@@ -59,7 +59,7 @@ class Header extends HTMLElement {
             </a>
           </li>
           <li>
-            <a href="/">
+            <a href="./crew.html">
               <span>02</span>Crew
             </a>
           </li>
@@ -81,6 +81,7 @@ async function loadData() {
   const response = await fetch('/starter-code/data.json');
   const data = await response.json();
   createDestinationPage(data);
+  createCrewPage(data);
   console.log(data)
 }
 loadData();
@@ -159,5 +160,22 @@ function createDestinationPage(data) {
       })
     })
   }
+}
+
+//crew page
+
+function createCrewPage(data) {
+  let crewImg = document.getElementById('crew-member-img');
+  let dataCrew = data.crew
+  
+
+    dataCrew.forEach(response => {
+
+      crewImg.innerHTML = `
+      <img width="170" height="223" src="${data.crew[0].images.webp}">
+      `
+
+    })
+          
 }
 
