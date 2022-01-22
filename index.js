@@ -35,7 +35,7 @@ class Header extends HTMLElement {
       <nav class="navigation">
         <div class="top-nav flex flex-row flex-jc-sb flex-ai-c">
           <div class="logo">
-            <img src="starter-code/assets/shared/logo.svg">
+            <img width="48" height="48" src="starter-code/assets/shared/logo.svg">
           </div>
           <a id="toggle-menu" class="toggle-menu hidden-lg" onclick="closeBtn(); toggleMenu()">
             <div id="burger">
@@ -81,6 +81,7 @@ async function loadData() {
   const response = await fetch('/starter-code/data.json');
   const data = await response.json();
   createDestinationPage(data);
+  console.log(data)
 }
 loadData();
 
@@ -100,7 +101,7 @@ function createDestinationPage(data) {
     dataDestinations.forEach(response => {
 
       destinationImg.innerHTML = `
-      <img src="${data.destinations[0].images.png}">
+      <img width="170" height="170" src="${data.destinations[0].images.webp}">
       `
       destinationName.innerHTML = `
       <h2>${data.destinations[0].name}</h2>
@@ -129,7 +130,7 @@ function createDestinationPage(data) {
           
           if (item.dataset.item === response.name) {
             destinationImg.innerHTML = `
-          <img src="${response.images.png}">
+          <img width="170" height="170" src="${response.images.webp}">
           `
             destinationName.innerHTML = `
           <h2>${response.name}</h2>
