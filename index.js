@@ -35,7 +35,10 @@ class Header extends HTMLElement {
       <nav class="navigation">
         <div class="top-nav flex flex-row flex-jc-sb flex-ai-c">
           <div class="logo">
+          <a href="./index.html">
             <img width="48" height="48" src="starter-code/assets/shared/logo.svg">
+          </a>
+            
           </div>
           <a id="toggle-menu" class="toggle-menu hidden-lg" onclick="closeBtn(); toggleMenu()">
             <div id="burger">
@@ -82,7 +85,7 @@ async function loadData() {
   const data = await response.json();
   createDestinationPage(data);
   createCrewPage(data);
-  console.log(data)
+  // console.log(data)
 }
 loadData();
 
@@ -125,7 +128,7 @@ function createDestinationPage(data) {
      
 
       destinationArray.forEach((item) => {
-        console.log(item)
+        // console.log(item)
         item.addEventListener('click', function (event) {
           event.preventDefault();
           
@@ -166,15 +169,71 @@ function createDestinationPage(data) {
 
 function createCrewPage(data) {
   let crewImg = document.getElementById('crew-member-img');
+  let crewName = document.querySelector('.crew-name');
+  let crewRole = document.querySelector('.crew-role');
+  let crewBio = document.querySelector('.crew-bio');
+  let carouselButtons = document.getElementById('carousel-buttons').children;
+  let buttonsArray = Array.from(carouselButtons)
   let dataCrew = data.crew
   
 
     dataCrew.forEach(response => {
 
       crewImg.innerHTML = `
-      <img width="170" height="223" src="${data.crew[0].images.webp}">
+      <img src="${data.crew[0].images.webp}">
+      `
+      crewRole.innerHTML = `
+      <h2>${data.crew[0].role}</h2>
       `
 
+      crewName.innerHTML = `
+      <h3>${data.crew[0].name}</h3>
+      `
+
+      crewBio.innerHTML = `
+          <p>${data.crew[0].bio}</p>
+          `
+
+          buttonsArray.forEach((item) => {
+            console.log(item)
+            item.addEventListener('click', function (event) {
+              event.preventDefault();
+
+              console.log(item.dataset)
+              console.log(response.name)
+              
+              if (item.dataset.item === response.name) {
+                crewImg.innerHTML = `
+              <img src="${response.images.webp}">
+              `
+                crewRole.innerHTML = `
+              <h2>${response.role}</h2>
+              `
+              crewName.innerHTML = `
+              <h3>${response.name}</h3>
+              `
+                crewBio.innerHTML = `
+              <p>${response.bio}</p>
+              `
+    
+              // facts.innerHTML = `
+              // <div class="distance">
+              //   <h3>AVG. DISTANCE</h3>
+              //   <p>${response.distance}</p>
+              // </div>
+              // <div class="travel-time">
+              //   <h3>EST. TRAVEL TIME</h3>
+              //   <p>${response.travel}</p>
+              // </div>`
+              }
+    
+              //set an active element
+              let activeEl = document.querySelector('.active-link')
+              activeEl.classList.remove('active-link');
+              item.className += " active-link"
+    
+            })
+          })
     })
           
 }
