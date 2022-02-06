@@ -755,3 +755,69 @@
       
     }
 }
+
+@media screen and (min-width: 1024px) {
+    #crew-content {
+        .main-body {
+            flex-direction: row-reverse;
+            // gap: 81px;
+    
+            .right-desktop {
+                align-items: flex-start;
+                max-width: 614px;
+                #carousel-buttons {
+                    order: 4;
+                    a {
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+
+                .crew-bio {
+                    max-width: 450px;
+                    p {
+                        text-align: start;
+                        font-size: 18px;
+                        line-height: 32px;
+                    }   
+                }
+
+                .crew-role {
+                    h2 {
+                        font-size: 32px;
+                    }
+                }
+
+                .crew-name {
+                    max-width: 614px;
+                    width: 614px;
+                    h3 {
+                        font-size: 56px;
+                    }
+                }
+            }
+
+            .left-desktop {
+                .crew-img {
+                    #crew-member-img {
+                        margin-top: 110px;
+                        height: unset;
+                        max-width: 714px;
+                        max-height: 712px;
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                }  
+                &:before{
+                    content: unset;
+                }
+            }
+        }
+    }
+    
+}
+
+
+

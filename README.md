@@ -87,3 +87,8 @@ The more specific you are with your questions the more likely it is that another
 We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
 
 **Have fun building!** 🚀
+
+
+//issues along the way 
+- page wasn't loading correctly, it looked like the execution time for the images were slower. I changed the jpg to webp format as the size for those is smaller
+and they are next-gen. It didn't help. I ran the lighthouse and found out that there are render-blocking resources in google fonts. I have decided to use font-face to load fonts locally rather than from the server. It helped to speed up the process of css execution which resulted in no delay of image loading.

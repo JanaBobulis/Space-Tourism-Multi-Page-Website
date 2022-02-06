@@ -83,3 +83,13 @@ h2 {
     }
 }
 
+@media screen and (max-width: 1024px) {
+    .site-bounds {
+        max-width: 1185px;
+        margin: 0 auto;
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+}
+
+

@@ -180,7 +180,7 @@ function createCrewPage(data) {
     dataCrew.forEach(response => {
 
       crewImg.innerHTML = `
-      <img src="${data.crew[0].images.webp}">
+      <img class="${data.crew[0].name}" src="${data.crew[0].images.webp}" alt="${data.crew[0].name}">
       `
       crewRole.innerHTML = `
       <h2>${data.crew[0].role}</h2>
@@ -204,7 +204,7 @@ function createCrewPage(data) {
               
               if (item.dataset.item === response.name) {
                 crewImg.innerHTML = `
-              <img src="${response.images.webp}">
+              <img class="${response.name}" src="${response.images.webp}" alt="${response.name}">
               `
                 crewRole.innerHTML = `
               <h2>${response.role}</h2>
@@ -238,3 +238,4 @@ function createCrewPage(data) {
           
 }
 
+console.log('test')
