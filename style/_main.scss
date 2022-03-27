@@ -623,8 +623,8 @@
                 // height: 231px;
                 // max-width: 223px;
                 height: 222px;
-                // width: 153px;
-                // max-height: 222px;
+                width: 153px;
+                max-height: 222px;
                 margin-top: 32px;
 
                 img {
@@ -635,6 +635,7 @@
         }
 
         .right-desktop {
+            align-items: center;
             #carousel-buttons {
                 margin-top: 32px;
                 a {
@@ -711,7 +712,7 @@
         .main-body {
             flex-direction: column-reverse ;
             .right-desktop {
-                .carousel-buttons {
+                #carousel-buttons {
                     order: 4;
                     margin-top: 40px;
                 }
@@ -742,7 +743,7 @@
             .crew-img {
                 #crew-member-img {
                     height: 532px;
-                    margin-top: 40px;
+                    // margin-top: 40px;
     
                     img {
                         width: 100%;
@@ -763,9 +764,11 @@
             // gap: 81px;
     
             .right-desktop {
+                margin-top: 154px;
                 align-items: flex-start;
                 max-width: 614px;
                 #carousel-buttons {
+                    margin-top: 154px;
                     order: 4;
                     a {
                         width: 15px;
@@ -799,11 +802,14 @@
 
             .left-desktop {
                 .crew-img {
+                        position: fixed;
+                        bottom: -4px;
+                        left: 55%;
                     #crew-member-img {
-                        margin-top: 110px;
+                        // margin-top: 110px;
                         height: unset;
-                        max-width: 714px;
-                        max-height: 712px;
+                        // max-width: 714px;
+                        // max-height: 712px;
                         img {
                             width: 100%;
                             height: auto;
@@ -811,7 +817,7 @@
                     }
                 }  
                 &:before{
-                    content: unset;
+                    content: none;
                 }
             }
         }
