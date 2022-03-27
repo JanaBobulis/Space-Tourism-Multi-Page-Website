@@ -623,7 +623,7 @@
                 // height: 231px;
                 // max-width: 223px;
                 height: 222px;
-                width: 153px;
+                max-width: 226px;
                 max-height: 222px;
                 margin-top: 32px;
 
@@ -742,6 +742,10 @@
         .left-desktop {
             .crew-img {
                 #crew-member-img {
+                    height: unset;
+                    max-height: unset;
+                    width: unset;
+                    max-width: unset;
                     height: 532px;
                     // margin-top: 40px;
     
@@ -806,10 +810,7 @@
                         bottom: -4px;
                         left: 55%;
                     #crew-member-img {
-                        // margin-top: 110px;
                         height: unset;
-                        // max-width: 714px;
-                        // max-height: 712px;
                         img {
                             width: 100%;
                             height: auto;
