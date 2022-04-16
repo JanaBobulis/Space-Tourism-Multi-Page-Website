@@ -3,7 +3,6 @@ async function loadData() {
     const response = await fetch('/starter-code/data.json');
     const data = await response.json();
     createTechPage(data)
-    console.log(data)
   }
   loadData();
 
@@ -17,18 +16,39 @@ function createTechPage(data) {
     let buttonsChildren = carouselButtonsTech.children;
     console.log(buttonsChildren)
     let buttonsArray = Array.from(buttonsChildren)
+
+    console.log(window.innerWidth)
    
     let dataTech = data.technology;
-    console.log(dataTech)
     
-  
       dataTech.forEach(response => {
-  
-        techImg.innerHTML = `
-        <img class="${data.technology[0].name}" src="${data.technology[0].images.landscape}" alt="${data.technology[0].name}">
-        `
+
+        if (window.innerWidth <= 1024) {
+          techImg.innerHTML = `
+          <img class="${data.technology[0].name}" src="${data.technology[0].images.landscape}" alt="${data.technology[0].name}">
+          `
+        }  else {
+          techImg.innerHTML = `
+          <img class="${data.technology[0].name}" src="${data.technology[0].images.portrait}" alt="${data.technology[0].name}">
+          `
+        }
+
+        window.addEventListener('resize', function() {
+          if (window.innerWidth <= 1024) {
+            techImg.innerHTML = `
+            <img class="${data.technology[0].name}" src="${data.technology[0].images.landscape}" alt="${data.technology[0].name}">
+            `
+          }  else {
+            techImg.innerHTML = `
+            <img class="${data.technology[0].name}" src="${data.technology[0].images.portrait}" alt="${data.technology[0].name}">
+            `
+          }
+        }, true);
+
+        techNameTerminology = 'THE TERMINOLOGY...'
   
         techName.innerHTML = `
+        <span>${techNameTerminology}</span>
         <h3>${data.technology[0].name}</h3>
         `
   
@@ -40,11 +60,24 @@ function createTechPage(data) {
               console.log(item)
               item.addEventListener('click', function (event) {
                 event.preventDefault();
+                console.log(item.dataset.item, 'dataset item')
+                console.log(response.name, 'response name')
   
                 if (item.dataset.item === response.name) {
-                  techImg.innerHTML = `
-                <img width="170" height="170" src="${response.images.landscape}">
-                `
+
+                  window.addEventListener('resize', function() {
+                    if (window.innerWidth <= 1024) {
+                      techImg.innerHTML = `
+                      <img class="${data.technology[0].name}" src="${data.technology[0].images.landscape}" alt="${data.technology[0].name}">
+                      `
+                    }  else {
+                      techImg.innerHTML = `
+                      <img class="${data.technology[0].name}" src="${data.technology[0].images.portrait}" alt="${data.technology[0].name}">
+                      `
+                    }
+                  }, true);
+
+                  
                 techName.innerHTML = `
                 <h3>${response.name}</h3>
                 `
